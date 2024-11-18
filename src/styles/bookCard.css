@@ -1,3 +1,50 @@
-.bookCard{
-    
+.bookCardContainer{
+
 }
+
+.bookcardWrapper{
+
+}
+
+.filerWrappers{
+
+}
+
+.filterSectionA{
+
+}
+
+@media (max-width: 908px) {
+
+    .bookCardContainer{
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .filterWrappers{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: start;  
+        margin:0;      
+    }
+
+    .filterSectionA{
+        flex-wrap: wrap;
+    }
+
+    .bookcardWrapper{
+        width: 80%;
+    }
+    .filterCard{
+        margin:10px ;
+    }
+
+}
+
+

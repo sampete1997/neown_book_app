@@ -5,7 +5,7 @@ const Navbar = () => {
 
     
     return (
-        <nav className="bg-blue-600 text-white shadow-md rounded-b-lg z-10 sticky top-0">
+        <nav className="bg-blue-600 text-white shadow-md rounded-b-lg z-10 sticky top-0 w-full">
             <div className="container mx-auto flex items-center justify-between px-6 py-3">
                 {/* Company Name */}
                 <div className="text-xl font-bold">

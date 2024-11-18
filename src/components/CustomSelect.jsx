@@ -8,9 +8,9 @@ function CustomSelect({ key_name, label, values = [], onChange, className = '' }
   const handleOnChnage = (e) => {
     const val = e.target.value;
     onChange(e, key_name)
-    setValue(`${String(val)?.charAt(0).toUpperCase() + String(val)?.slice(1)}`)
+    setValue(val)
   }
-  
+
   return (
     <div>
       {/* {label && <label htmlFor="sorting" className="block text-gray-700 mb-2">{label}</label>} */}

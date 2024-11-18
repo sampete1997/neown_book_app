@@ -9,6 +9,7 @@ import { debounce } from "../util/utils";
 import CustomSelect from "../components/CustomSelect";
 import { statusCode } from "../util/constants";
 import NoResultFound from "../components/NoResultFound";
+import '../styles/bookCard.css'
 
 
 const getBookByKeys = ["title", "author", "genre", "rating"];
@@ -92,22 +93,23 @@ function BooksTable() {
       title: '',
       genre: '',
       rating: 0,
+      sort_by:""
     }));
     setSearch(!isSearch);
     window.location.reload()
   }
 
   return (
-    <div className="p-2">
-      <div className="m-1 flex justify-between bg-blue-600 py-4 rounded-md">
-        <div className="flex justify-start">
+    <div className="p-2 w-full">
+      <div className="filterWrappers m-1 flex justify-between bg-blue-600 py-4 rounded-md">
+        <div className="filterSectionA flex justify-start">
 
-          <CustomSelect
+        <CustomSelect
             key_name={"sort_by"}
-            label={"Sort by"}
+            label={"Sort By"}
             values={filtersListing.sort_by}
             onChange={handleSearchChange}
-            className="mx-2 rounded-md px-1 focus:outline-none"
+            className="mx-2 rounded-md px-1 focus:outline-none filterCard"
           />
 
           <input
@@ -115,7 +117,7 @@ function BooksTable() {
             placeholder="Search by Title"
             value={filters.title}
             onChange={(e) => handleSearchChange(e, "title")}
-            className="w-[20%] mx-2 rounded-md px-1 focus:outline-none"
+            className="w-[30%] mx-2 rounded-md px-1 focus:outline-none filterCard"
           />
 
           <CustomSelect
@@ -123,7 +125,7 @@ function BooksTable() {
             label={"Genre"}
             values={filtersListing.genre}
             onChange={handleSearchChange}
-            className="mx-2 rounded-md px-1 focus:outline-none"
+            className="mx-2 rounded-md px-1 focus:outline-none filterCard"
           />
 
           <CustomSelect
@@ -131,7 +133,7 @@ function BooksTable() {
             label={"Author"}
             values={filtersListing.author}
             onChange={handleSearchChange}
-            className="mx-2 rounded-md px-1 focus:outline-none"
+            className="mx-2 rounded-md px-1 focus:outline-none filterCard"
           />
 
           <CustomSelect
@@ -139,11 +141,11 @@ function BooksTable() {
             label={"Rating"}
             values={filtersListing.rating}
             onChange={handleSearchChange}
-            className="mx-2 rounded-md px-1 focus:outline-none"
+            className="mx-2 rounded-md px-1 focus:outline-none filterCard"
           />
 
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end filterCard">
 
           <Button
             onClick={handleSearch}
@@ -162,7 +164,7 @@ function BooksTable() {
 
       {booksData?.length > 0 ? (
         <>
-          <div className="flex flex-row flex-wrap justify-start w-[100%] my-3 py-5 pl-5 rounded-md bg-blue-600">
+          <div className="bookCardContainer flex flex-row flex-wrap justify-start w-[100%] my-3 py-5 pl-5 rounded-md bg-blue-600">
             {booksData?.map((book) => (
               <BookRow key={book._id} book={book} />
             ))}

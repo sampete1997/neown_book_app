@@ -8,6 +8,7 @@ const booksSlice = createSlice({
       title: '',
       genre: '',
       rating: 0,
+      sort_by:""
     },
     pagination: {
       page: 1,
