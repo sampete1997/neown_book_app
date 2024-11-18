@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import BooksTable from "./pages/BooksTable";
-import AddBooks from "./components/AddBooks";
 import Navbar from "./components/NavBar";
 import Snackbar from "@mui/material/Snackbar";
 import { useSelector, useDispatch } from "react-redux";
@@ -38,7 +37,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/books" element={<BooksTable />} />
-          <Route path="/add" element={<AddBooks />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/Recommendations" element={<BooksRecommendation />} />
         </Routes>
